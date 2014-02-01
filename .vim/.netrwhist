@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/BoJaN/Parts/QuantumStruts/strutGun'
+let g:netrw_dirhist_2='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/BoJaN/Parts/QuantumStruts'
+let g:netrw_dirhist_3='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/BoJaN/Parts/QuantumStruts/strutGun'
+let g:netrw_dirhist_4='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/Kethane/Parts/kethane_heavyDrill'
+let g:netrw_dirhist_5='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/Kethane/Parts/kethane_tank2mLarge'
+let g:netrw_dirhist_6='/home/alan/.local/share/Steam/SteamApps/common/Kerbal Space Program/GameData/Kethane/Parts/kethane_tank2mSmall'
+let g:netrw_dirhist_7='/home/alan/Documents/Programming/git/Rouge/util'
