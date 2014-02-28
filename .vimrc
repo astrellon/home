@@ -13,6 +13,9 @@ set nocompatible
 "Bundle 'Valloric/YouCompleteMe'
 
 "filetype plugin indent on
+
+set t_Co=256
+colorscheme jellybeans
        
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -115,6 +118,9 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 
 silent! nmap <C-a> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
+:imap ii <Esc>
+
+
 
 set pastetoggle=<F2>
 
