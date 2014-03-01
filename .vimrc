@@ -90,8 +90,6 @@ set mouse=a         " Enable the use of the mouse.
 " for unix/linux/solaris
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
