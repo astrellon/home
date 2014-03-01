@@ -35,12 +35,12 @@ set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
 
-set showmatch       " When a bracket is inserted, briefly jump to the matching
+ set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " one. The jump is only done if the match can be seen on the
                     " screen. The time to show the match can be set with
                     " 'matchtime'.
  
-set hlsearch        " When there is a previous search pattern, highlight all
+ set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
  
 set incsearch       " While typing a search command, show immediately where the
@@ -88,7 +88,7 @@ set mouse=a         " Enable the use of the mouse.
 
 " VimTip 80: Restore cursor to file position in previous editing session
 " for unix/linux/solaris
-set viminfo='10,\"100,:20,%,n~/.viminfo
+  set viminfo='10,\"100,:20,%,n~/.viminfo
 
 function! ResCur()
   if line("'\"") <= line("$")
@@ -119,8 +119,14 @@ silent! map <F3> :NERDTreeFind<CR>
 :imap ii <Esc>
 
 
+" navigation for ctrlp
+imap <silent> <C-h> <left>
+imap <silent> <C-j> <down>
+imap <silent> <C-k> <up>
+imap <silent> <C-l> <right>
+
 
 set pastetoggle=<F2>
 
-" let g:NERDTreeMapActivateNode="<F3>"
-" let g:NERDTreeMapPreview="<F4>"
+ " let g:NERDTreeMapActivateNode="<F3>"
+ " let g:NERDTreeMapPreview="<F4>"
