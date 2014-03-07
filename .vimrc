@@ -13,6 +13,8 @@ set nocompatible
 "Bundle 'Valloric/YouCompleteMe'
 
 "filetype plugin indent on
+execute pathogen#infect()
+
 
 set t_Co=256
 colorscheme jellybeans
@@ -104,6 +106,14 @@ augroup END
  
 filetype plugin indent on
 syntax on
+set noshowmatch
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+"Super tab settings
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Allows for yanking and pasting to a common file
 vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/.vimpaste<CR>
@@ -116,9 +126,12 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 
 silent! nmap <C-a> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
-:imap ii <Esc>
+silent! imap ii <Esc>
 
-
+silent! imap <C-h> <left>
+silent! imap <C-j> <down>
+silent! imap <C-k> <up>
+silent! imap <C-l> <right>
 
 set pastetoggle=<F2>
 
