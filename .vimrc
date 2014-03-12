@@ -37,12 +37,12 @@ set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
 
-set showmatch       " When a bracket is inserted, briefly jump to the matching
+ set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " one. The jump is only done if the match can be seen on the
                     " screen. The time to show the match can be set with
                     " 'matchtime'.
  
-set hlsearch        " When there is a previous search pattern, highlight all
+ set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
  
 set incsearch       " While typing a search command, show immediately where the
@@ -90,7 +90,7 @@ set mouse=a         " Enable the use of the mouse.
 
 " VimTip 80: Restore cursor to file position in previous editing session
 " for unix/linux/solaris
-set viminfo='10,\"100,:20,%,n~/.viminfo
+  set viminfo='10,\"100,:20,%,n~/.viminfo
 
 function! ResCur()
   if line("'\"") <= line("$")
@@ -104,6 +104,30 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
  
+autocmd BufWinLeave .* mkview
+autocmd BufWinEnter .* silent loadview
+
+function! s:DiffWithSaved()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
+function! NeatFoldText() 
+  let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+  let lines_count = v:foldend - v:foldstart + 1
+  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+  let foldchar = matchstr(&fillchars, 'fold:\zs.')
+  let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+  let foldtextend = lines_count_text . repeat(foldchar, 8)
+  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+  return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+  
+endfunction
+set foldtext=NeatFoldText()
 filetype plugin indent on
 syntax on
 set noshowmatch
@@ -128,12 +152,13 @@ silent! nmap <C-a> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 silent! imap ii <Esc>
 
-silent! imap <C-h> <left>
-silent! imap <C-j> <down>
-silent! imap <C-k> <up>
-silent! imap <C-l> <right>
+" navigation for ctrlp
+imap <silent> <C-h> <left>
+imap <silent> <C-j> <down>
+imap <silent> <C-k> <up>
+imap <silent> <C-l> <right>
 
 set pastetoggle=<F2>
 
-" let g:NERDTreeMapActivateNode="<F3>"
-" let g:NERDTreeMapPreview="<F4>"
+ " let g:NERDTreeMapActivateNode="<F3>"
+ " let g:NERDTreeMapPreview="<F4>"
