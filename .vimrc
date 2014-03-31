@@ -148,9 +148,11 @@ map <silent> ,P :sview ~/.vimpaste<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>
 " autocmd VimEnter * NERDTree
 let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 
-silent! nmap <C-a> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
+silent! nmap <F3> :NERDTreeToggle<CR>
+silent! map <F4> :NERDTreeFind<CR>
 silent! imap ii <Esc>
+
+map <silent> <C-a> <C-u>
 
 " navigation for ctrlp
 imap <silent> <C-h> <left>
