@@ -17,7 +17,8 @@ execute pathogen#infect()
 
 
 set t_Co=256
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme railscasts
        
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -81,7 +82,7 @@ set formatoptions=c,q,r,t " This is a sequence of letters which describes how
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
  
-set background=dark " When set to "dark", Vim will try to use colors that look
+"set background=dark " When set to "dark", Vim will try to use colors that look
                     " good on a dark background. When set to "light", Vim will
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
