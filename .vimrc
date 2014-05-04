@@ -129,17 +129,20 @@ function! NeatFoldText()
   
 endfunction
 set foldtext=NeatFoldText()
+set foldmethod=marker
+
+map <C-a> <C-u>
+
 filetype plugin indent on
 syntax on
 set noshowmatch
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 "Super tab settings
-let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType cs setlocal let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
 let g:SuperTabClosePreviewOnPopupClose = 1
-
 " Allows for yanking and pasting to a common file
 vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/.vimpaste<CR>
 nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/.vimpaste<CR>
