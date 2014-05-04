@@ -115,6 +115,7 @@ function! s:DiffWithSaved()
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+com! Q q
 
 function! NeatFoldText() 
   let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
@@ -151,8 +152,12 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 silent! nmap <F3> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
 silent! imap ii <Esc>
+nmap <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>a
 
 map <silent> <C-a> <C-u>
+
+
 
 " navigation for ctrlp
 imap <silent> <C-h> <left>
