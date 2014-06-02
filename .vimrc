@@ -17,8 +17,7 @@ execute pathogen#infect()
 
 
 set t_Co=256
-"colorscheme jellybeans
-colorscheme railscasts
+colorscheme jellybeans
        
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -140,7 +139,7 @@ set noshowmatch
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 "Super tab settings
-autocmd FileType cs setlocal let g:SuperTabDefaultCompletionType = 'context'
+"autocmd FileType cs setlocal let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
 let g:SuperTabClosePreviewOnPopupClose = 1
@@ -156,18 +155,17 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 silent! nmap <F3> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
 silent! imap ii <Esc>
-nmap <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>a
+nmap <Space> :w<CR>
 
 map <silent> <C-a> <C-u>
-
-
 
 " navigation for ctrlp
 imap <silent> <C-h> <left>
 imap <silent> <C-j> <down>
 imap <silent> <C-k> <up>
 imap <silent> <C-l> <right>
+
+let g:ctrlp_root_markers=['.ctrlp']
 
 set pastetoggle=<F2>
 
