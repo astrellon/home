@@ -88,6 +88,8 @@ set ruler           " Show the line and column number of the cursor position,
  
 set mouse=a         " Enable the use of the mouse.
 
+set laststatus=2
+
 " VimTip 80: Restore cursor to file position in previous editing session
 " for unix/linux/solaris
   set viminfo='10,\"100,:20,%,n~/.viminfo
