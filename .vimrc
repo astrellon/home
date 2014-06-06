@@ -86,7 +86,7 @@ set ruler           " Show the line and column number of the cursor position,
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
  
-set mouse=a         " Enable the use of the mouse.
+" set mouse=a         " Enable the use of the mouse.
 
 set laststatus=2
 
