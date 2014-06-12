@@ -1,9 +1,6 @@
 " .vimrc
 
 " Set values {{{
-"filetype plugin indent on
-execute pathogen#infect()
-
 set t_Co=256
 colorscheme jellybeans
 
@@ -23,15 +20,33 @@ set backspace=2
 set autoindent      
 set textwidth=79    
 set formatoptions=c,q,r,t
-set ruler           
+set ruler      
 " set mouse=a         
 set laststatus=2
 
-filetype plugin indent on
 syntax on
 set noshowmatch
 
 set pastetoggle=<F2>
+" }}}
+
+" Neobundle config {{{
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'kien/ctrlp.vim'
+
+NeoBundle 'Shougo/vimshell'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 " }}}
 
 " Save and reload buffer positions {{{
