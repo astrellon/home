@@ -55,6 +55,7 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+color_prompt=yes
 
 color_prompt=yes
 
