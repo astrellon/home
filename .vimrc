@@ -29,7 +29,7 @@ set noshowmatch
 
 set pastetoggle=<F2>
 " Ignore these for any vim file auto complete.
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak
 " }}}
 
 " Neobundle config {{{
@@ -132,7 +132,7 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|meta|swp|swo)$',
+  \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak)$',
   \ }
 " }}}
 
