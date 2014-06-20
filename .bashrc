@@ -58,10 +58,13 @@ fi
 color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     # Custom bash prompt via kirsle.net/wizards/ps1.html
-    #PS1="\[$(tput bold)\]\[$(tput setaf 7)\][\[$(tput setaf 2)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 7)\]\W]\\$ \[$(tput sgr0)\]"
-    PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 7)\]\w \\$ \[$(tput sgr0)\]"
+
+    if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
+        PS1="\[\e[01;32m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;37m\]\w\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;37m\]\\$ \[\e[0m\]"
+    else
+        PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 7)\]\w \\$ \[$(tput sgr0)\]"
+    fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

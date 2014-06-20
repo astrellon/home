@@ -18,7 +18,7 @@ set ignorecase
 set smartcase       
 set backspace=2     
 set autoindent      
-set textwidth=79    
+"set textwidth=79    
 set formatoptions=c,q,r,t
 set ruler      
 " set mouse=a         
