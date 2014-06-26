@@ -18,7 +18,6 @@ set ignorecase
 set smartcase       
 set backspace=2     
 set autoindent      
-set textwidth=79    
 set formatoptions=c,q,r,t
 set ruler      
 " set mouse=a         
@@ -29,7 +28,7 @@ set noshowmatch
 
 set pastetoggle=<F2>
 " Ignore these for any vim file auto complete.
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg
 " }}}
 
 " Neobundle config {{{
@@ -106,7 +105,7 @@ set foldmethod=marker
 map <C-a> <C-u>
 silent! nmap <F3> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
-silent! imap ii <Esc>
+silent! imap jk <Esc>
 nmap <Space> :w<CR>
 
 map <silent> <C-a> <C-u>
@@ -132,7 +131,43 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak)$',
+  \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak|png|jpg)$',
   \ }
 " }}}
 
+" Search for selected text. {{{
+" http://vim.wikia.com/wiki/VimTip171
+let s:save_cpo = &cpo | set cpo&vim
+if !exists('g:VeryLiteral')
+  let g:VeryLiteral = 0
+endif
+function! s:VSetSearch(cmd)
+  let old_reg = getreg('"')
+  let old_regtype = getregtype('"')
+  normal! gvy
+  if @@ =~? '^[0-9a-z,_]*$' || @@ =~? '^[0-9a-z ,_]*$' && g:VeryLiteral
+    let @/ = @@
+  else
+    let pat = escape(@@, a:cmd.'\')
+    if g:VeryLiteral
+      let pat = substitute(pat, '\n', '\\n', 'g')
+    else
+      let pat = substitute(pat, '^\_s\+', '\\s\\+', '')
+      let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
+      let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
+    endif
+    let @/ = '\V'.pat
+  endif
+  normal! gV
+  call setreg('"', old_reg, old_regtype)
+endfunction
+vnoremap <silent> * :<C-U>call <SID>VSetSearch('/')<CR>/<C-R>/<CR>
+vnoremap <silent> # :<C-U>call <SID>VSetSearch('?')<CR>?<C-R>/<CR>
+vmap <kMultiply> *
+nmap <silent> <Plug>VLToggle :let g:VeryLiteral = !g:VeryLiteral
+  \\| echo "VeryLiteral " . (g:VeryLiteral ? "On" : "Off")<CR>
+if !hasmapto("<Plug>VLToggle")
+  nmap <unique> <Leader>vl <Plug>VLToggle
+endif
+let &cpo = s:save_cpo | unlet s:save_cpo
+" }}}
