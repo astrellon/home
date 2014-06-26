@@ -20,7 +20,6 @@ set backspace=2
 set autoindent      
 set formatoptions=c,q,r,t
 set ruler      
-" set mouse=a         
 set laststatus=2
 
 syntax on
@@ -95,10 +94,39 @@ function! NeatFoldText()
   let foldtextend = lines_count_text . repeat(foldchar, 8)
   let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-  
 endfunction
 set foldtext=NeatFoldText()
-set foldmethod=marker
+
+function! NeatFoldExpr()
+    let line = getline(v:lnum)
+
+    " Undefined for empty lines
+    if line =~? '\v^\s*$'
+        return '-1'
+    endif
+    " Add one for the start of a multiline comment
+    if line =~? '\v^\s*/\*'
+        return 'a1'
+    endif
+    " Subtract one for the end of a multiline comment
+    if line =~? '\v^\s*\**\*/'
+        return 's1'
+    endif
+    " Add one for a marker
+    if line =~ '{{{'
+
+        return 'a1'
+    endif
+    " Subtract one for a marker
+    if line =~ '}}}'
+        return 's1'
+    endif
+
+    " Else this line is the save as above
+    return '='
+endfunction
+set foldmethod=expr
+set foldexpr=NeatFoldExpr()
 " }}}
 
 " Remapping {{{
@@ -171,3 +199,4 @@ if !hasmapto("<Plug>VLToggle")
 endif
 let &cpo = s:save_cpo | unlet s:save_cpo
 " }}}
+
