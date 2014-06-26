@@ -18,10 +18,6 @@ set ignorecase
 set smartcase       
 set backspace=2     
 set autoindent      
-<<<<<<< HEAD
-=======
-"set textwidth=79    
->>>>>>> d7309b9a63875ea550d6db20c75928d53070f90f
 set formatoptions=c,q,r,t
 set ruler      
 " set mouse=a         
