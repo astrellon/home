@@ -125,7 +125,7 @@ function! NeatFoldExpr()
     " Else this line is the save as above
     return '='
 endfunction
-set foldmethod=expr
+set foldmethod=marker
 set foldexpr=NeatFoldExpr()
 " }}}
 
