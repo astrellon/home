@@ -61,7 +61,7 @@ if [ "$color_prompt" = yes ]; then
     # Custom bash prompt via kirsle.net/wizards/ps1.html
 
     if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
-        PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└── "
+        PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
     else
         PS1="┌── \[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\] \[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 3)\]\w \\[$(tput setaf 7)\]\\[$(tput sgr0)\]\n└─╼ "
     fi
