@@ -63,7 +63,7 @@ if [ "$color_prompt" = yes ]; then
     if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
         PS1="\[\e[01;32m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;37m\]\w\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;37m\]\\$ \[\e[0m\]"
     else
-        PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 7)\]\w \\$ \[$(tput sgr0)\]"
+        PS1="┌── \[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\] \[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 3)\]\w \\[$(tput setaf 7)\]\\[$(tput sgr0)\]\n└─╼ "
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -98,6 +98,7 @@ alias l='ls -CF'
 alias vi='vim'
 alias c='cd ..'
 alias sapi='sudo apt-get install'
+alias gca='git commit -a'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
