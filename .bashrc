@@ -63,7 +63,15 @@ if [ "$color_prompt" = yes ]; then
     if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
         PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
     else
-        PS1="┌── \[$(tput bold)\]\[$(tput setaf 2)\]\u\[$(tput setaf 7)\] \[$(tput setaf 4)\]\h \[$(tput bold)\]\[$(tput setaf 3)\]\w \\[$(tput setaf 7)\]\\[$(tput sgr0)\]\n└─╼ "
+        bold=$(tput bold)       # Bold
+        red=$(tput setaf 1)     # Red
+        green=$(tput setaf 2)   # Green
+        yellow=$(tput setaf 3)  # Yellow
+        blue=$(tput setaf 4)    # Blue
+        white=$(tput setaf 7)   # White
+        reset=$(tput sgr0)      # Reset
+
+        PS1="${reset}${red}┌── ${bold}${green}\u ${blue}\h ${yellow}\w ${reset}${red}\n└─╼${white}${bold} "
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -98,6 +106,7 @@ alias l='ls -CF'
 alias vi='vim'
 alias c='cd ..'
 alias sapi='sudo apt-get install'
+alias sapu='sudo apt-get update'
 alias gca='git commit -a'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
