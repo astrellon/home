@@ -79,7 +79,7 @@ if [ "$color_prompt" = yes ]; then
         colours[3]=${blue}
         colours[4]=${cyan}
         colours[5]=${white}
-        rand=$RANDOM
+        rand=`date +%s`
         let "rand %= 6"
 
         HH=`hostname`
