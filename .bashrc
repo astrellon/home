@@ -79,8 +79,9 @@ if [ "$color_prompt" = yes ]; then
         colours[3]=${blue}
         colours[4]=${cyan}
         colours[5]=${white}
+        colours[6]=${bold}${black}
         rand=`date +%s`
-        let "rand %= 6"
+        let "rand %= 7"
 
         HH=`hostname`
         uuser="${green}\u"
