@@ -88,26 +88,10 @@ if [ "$color_prompt" = yes ]; then
     post="${bold}${colours[rand]} ] ${bold}${white}"
     folder="${bold}${white}\w"
 
-    #if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
-    #    PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
-    #else
-
-    #bold="$(tput bold)"       # Bold
-    #black="$(tput setaf 0)"   # Black
-    #red="$(tput setaf 1)"     # Red
-    #green="$(tput setaf 2)"   # Green
-    #yellow="$(tput setaf 3)"  # Yellow
-    #blue="$(tput setaf 4)"    # Blue
-    #cyan="$(tput setaf 6)"    # Cyan
-    #white="$(tput setaf 7)"   # White
-    #reset="$(tput sgr0)"      # Reset
-
-
-    #pre="${reset}${colours[rand]}┌── ${bold}"
-    #post="\n${reset}${colours[rand]}└─╼${white}${bold} "
-
+    # Let me know when I'm over SSH
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
         PS1="${pre}${uuser} ${uhost} ${folder}${post}"
+    # Otherwise I don't need to see that I'm logged in all the time.
     else
         PS1="${pre}${folder}${post}"
     fi
