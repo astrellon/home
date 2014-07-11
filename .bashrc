@@ -71,44 +71,45 @@ if [ "$color_prompt" = yes ]; then
     cyan='\[\e[36m\]'
     white='\[\e[37m\]'
 
-    if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
-        PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
+    colours[0]=${red}
+    colours[1]=${green}
+    colours[2]=${yellow}
+    colours[3]=${blue}
+    colours[4]=${cyan}
+    colours[5]=${white}
+    colours[6]=${bold}${black}
+    rand=`date +%s`
+    let "rand %= 7"
+
+    HH=`hostname`
+    uuser="${green}\u"
+    uhost="${blue}\h"
+    pre="${reset}${bold}${colours[rand]}[ "
+    post="${bold}${colours[rand]} ] ${bold}${white}"
+    folder="${bold}${white}\w"
+
+    #if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
+    #    PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
+    #else
+
+    #bold="$(tput bold)"       # Bold
+    #black="$(tput setaf 0)"   # Black
+    #red="$(tput setaf 1)"     # Red
+    #green="$(tput setaf 2)"   # Green
+    #yellow="$(tput setaf 3)"  # Yellow
+    #blue="$(tput setaf 4)"    # Blue
+    #cyan="$(tput setaf 6)"    # Cyan
+    #white="$(tput setaf 7)"   # White
+    #reset="$(tput sgr0)"      # Reset
+
+
+    #pre="${reset}${colours[rand]}┌── ${bold}"
+    #post="\n${reset}${colours[rand]}└─╼${white}${bold} "
+
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        PS1="${pre}${uuser} ${uhost} ${folder}${post}"
     else
-
-        #bold="$(tput bold)"       # Bold
-        #black="$(tput setaf 0)"   # Black
-        #red="$(tput setaf 1)"     # Red
-        #green="$(tput setaf 2)"   # Green
-        #yellow="$(tput setaf 3)"  # Yellow
-        #blue="$(tput setaf 4)"    # Blue
-        #cyan="$(tput setaf 6)"    # Cyan
-        #white="$(tput setaf 7)"   # White
-        #reset="$(tput sgr0)"      # Reset
-
-        colours[0]=${red}
-        colours[1]=${green}
-        colours[2]=${yellow}
-        colours[3]=${blue}
-        colours[4]=${cyan}
-        colours[5]=${white}
-        colours[6]=${bold}${black}
-        rand=`date +%s`
-        let "rand %= 7"
-
-        #pre="${reset}${colours[rand]}┌── ${bold}"
-        #post="\n${reset}${colours[rand]}└─╼${white}${bold} "
-
-        HH=`hostname`
-        uuser="${green}\u"
-        uhost="${blue}\h"
-        pre="${reset}${bold}${colours[rand]}[ "
-        post="${bold}${colours[rand]} ] ${bold}${white}"
-        folder="${bold}${white}\w"
-        if [[ ${HH,,} =~ .*alan.* ]]; then
-            PS1="${pre}${folder}${post}"
-        else
-            PS1="${pre}${uuser} ${uhost} ${folder}${post}"
-        fi
+        PS1="${pre}${folder}${post}"
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
