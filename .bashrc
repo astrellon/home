@@ -60,18 +60,30 @@ color_prompt=yes
 if [ "$color_prompt" = yes ]; then
     # Custom bash prompt via kirsle.net/wizards/ps1.html
 
+    bold='\[\e[1m\]'
+    reset='\[\e[0m\]'
+    black='\[\e[30m\]'
+    red='\[\e[31m\]'
+    green='\[\e[32m\]'
+    yellow='\[\e[33m\]'
+    blue='\[\e[34m\]'
+    purple='\[\e[35m\]'
+    cyan='\[\e[36m\]'
+    white='\[\e[37m\]'
+
     if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
         PS1="\[\e[1;37m\]┌── \[\e[01;32m\]\u\[\e[00;37m\] \[\e[01;34m\]\h\[\e[00;37m\] \[\e[01;33m\]\w \[\e[1;37m\]\n└─> "
     else
-        bold=$(tput bold)       # Bold
-        black=$(tput setaf 0)   # Black
-        red=$(tput setaf 1)     # Red
-        green=$(tput setaf 2)   # Green
-        yellow=$(tput setaf 3)  # Yellow
-        blue=$(tput setaf 4)    # Blue
-        cyan=$(tput setaf 6)    # Cyan
-        white=$(tput setaf 7)   # White
-        reset=$(tput sgr0)      # Reset
+
+        #bold="$(tput bold)"       # Bold
+        #black="$(tput setaf 0)"   # Black
+        #red="$(tput setaf 1)"     # Red
+        #green="$(tput setaf 2)"   # Green
+        #yellow="$(tput setaf 3)"  # Yellow
+        #blue="$(tput setaf 4)"    # Blue
+        #cyan="$(tput setaf 6)"    # Cyan
+        #white="$(tput setaf 7)"   # White
+        #reset="$(tput sgr0)"      # Reset
 
         colours[0]=${red}
         colours[1]=${green}
@@ -101,7 +113,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset cforce_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
