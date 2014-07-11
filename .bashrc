@@ -83,12 +83,15 @@ if [ "$color_prompt" = yes ]; then
         rand=`date +%s`
         let "rand %= 7"
 
+        #pre="${reset}${colours[rand]}┌── ${bold}"
+        #post="\n${reset}${colours[rand]}└─╼${white}${bold} "
+
         HH=`hostname`
         uuser="${green}\u"
         uhost="${blue}\h"
-        pre="${reset}${colours[rand]}┌── ${bold}"
-        post="\n${reset}${colours[rand]}└─╼${white}${bold} "
-        folder="${colours[rand]}${bold}\w"
+        pre="${reset}${bold}${colours[rand]}[ "
+        post="${bold}${colours[rand]} ] ${bold}${white}"
+        folder="${bold}${white}\w"
         if [[ ${HH,,} =~ .*alan.* ]]; then
             PS1="${pre}${folder}${post}"
         else
