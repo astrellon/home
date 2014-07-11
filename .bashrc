@@ -71,13 +71,13 @@ if [ "$color_prompt" = yes ]; then
     cyan='\[\e[36m\]'
     white='\[\e[37m\]'
 
-    colours[0]=${red}
-    colours[1]=${green}
-    colours[2]=${yellow}
-    colours[3]=${blue}
-    colours[4]=${cyan}
-    colours[5]=${white}
-    colours[6]=${bold}${black}
+    colours[0]=${bold}${black}
+    colours[1]=${red}
+    colours[2]=${green}
+    colours[3]=${yellow}
+    colours[4]=${blue}
+    colours[5]=${purple}
+    colours[6]=${cyan}
     rand=`date +%s`
     let "rand %= 7"
 
