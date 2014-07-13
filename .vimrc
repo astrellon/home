@@ -43,6 +43,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'maksimr/vim-jsbeautify'
 
 NeoBundle 'Shougo/vimshell'
 
