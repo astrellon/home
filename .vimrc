@@ -44,8 +44,7 @@ NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'maksimr/vim-jsbeautify'
-
-NeoBundle 'Shougo/vimshell'
+NeoBundle 'mattn/emmet-vim'
 
 call neobundle#end()
 
@@ -151,6 +150,13 @@ nnoremap <C-J> <C-W><C-J> "Ctrl-j to move down a split
 nnoremap <C-K> <C-W><C-K> "Ctrl-k to move up a split  
 nnoremap <C-L> <C-W><C-L> "Ctrl-l to move right a split  
 nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split  
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap ; :
+
+map <silent> <C-x>x <C-y>,
 " }}}
 
 " Super tab settings {{{
@@ -208,3 +214,7 @@ endif
 let &cpo = s:save_cpo | unlet s:save_cpo
 " }}}
 
+" Emmet settings {{{
+"let g:user_emmet_leader_key='<C-x>'
+autocmd FileType html,css,js EmmetInstall
+" }}}
