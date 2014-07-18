@@ -57,9 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 color_prompt=yes
 
-if [ "$color_prompt" = yes ]; then
-    # Custom bash prompt via kirsle.net/wizards/ps1.html
-
+newcolour () {
     bold='\[\e[1m\]'
     reset='\[\e[0m\]'
     black='\[\e[30m\]'
@@ -95,6 +93,13 @@ if [ "$color_prompt" = yes ]; then
     else
         PS1="${pre}${folder}${post}"
     fi
+}
+
+if [ "$color_prompt" = yes ]; then
+    # Custom bash prompt via kirsle.net/wizards/ps1.html
+
+    newcolour
+
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
