@@ -45,8 +45,14 @@ NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'Raimondi/delimitMate'
 
 call neobundle#end()
+
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
 
 filetype plugin indent on
 
