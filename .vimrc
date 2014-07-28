@@ -48,6 +48,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'vim-scripts/a.vim'
 
 call neobundle#end()
 
@@ -178,7 +179,7 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 " CtrlP settings {{{
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn))|(temp)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn))|(temp|node_modules)$',
   \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak|png|jpg)$',
   \ }
 " }}}
