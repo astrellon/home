@@ -14,7 +14,9 @@ SVN vimdiff
 To use vimdiff for svn diff add this line to 
 `~/.subversion/config`
 
-`
+```
 [helpers]
 diff-cmd = ~/.svndiffwrap.sh
-`
+```
+
+Assuming that `.svndiffwrap.sh` has been symlinked from the home repo.
