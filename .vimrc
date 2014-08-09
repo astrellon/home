@@ -49,6 +49,7 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'jaxbot/brolink.vim'
 
 call neobundle#end()
 
