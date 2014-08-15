@@ -41,14 +41,12 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'paradigm/TextObjectify'
-NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'jiangmiao/simple-javascript-indenter'
 
 call neobundle#end()
 
@@ -426,4 +424,18 @@ let &cpo = s:save_cpo | unlet s:save_cpo
 " Emmet settings {{{
 "let g:user_emmet_leader_key='<C-x>'
 autocmd FileType html,css,js EmmetInstall
+" }}}
+
+" File Type settings {{{
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+" }}}
+
+" Push to Sketchup {{{
+" Add this to your .vimrc or autoload it.
+function! s:PushToSketchup()
+    :w !curl --data-binary "@-" http://localhost:2345
+endfunction
+com! PushSKP call s:PushToSketchup()
 " }}}
