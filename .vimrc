@@ -22,6 +22,7 @@ set formatoptions=c,q,r,t
 set ruler      
 set laststatus=2
 set textwidth=999
+"set mouse=a
 
 syntax on
 set noshowmatch
@@ -45,8 +46,11 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundle 'jaxbot/brolink.vim'
+NeoBundle 'scrooloose/nerdcommenter'
 
 call neobundle#end()
 
@@ -177,6 +181,8 @@ inoremap <c-e> <esc>A
 
 " Split line, reverse of J
 nnoremap S i<cr><esc><right>
+noremap <leader>s i<cr><esc><right>O
+inoremap <c-]> {<cr>}<esc>O
 
 " Match whole line
 inoremap <c-l> <c-x><c-l>
