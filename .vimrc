@@ -183,6 +183,9 @@ inoremap <c-e> <esc>A
 nnoremap S i<cr><esc><right>
 noremap <leader>s i<cr><esc><right>O
 inoremap <c-]> {<cr>}<esc>O
+inoremap {<cr> {<cr>}<esc>O
+inoremap [<cr> [<cr>]<esc>O
+inoremap (<cr> (<cr>)<esc>O
 
 " Match whole line
 inoremap <c-l> <c-x><c-l>
