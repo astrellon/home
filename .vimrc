@@ -448,3 +448,7 @@ function! s:PushToSketchup()
 endfunction
 com! PushSKP call s:PushToSketchup()
 " }}}
+
+" Simply Javascript Indenter config {{{
+let g:SimpleJsIndenter_BriefMode = 1
+" }}}
