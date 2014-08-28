@@ -32,6 +32,14 @@ set pastetoggle=<F2>
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg
 " }}}
 
+" Filetype specific settings {{{
+
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead,BufEnter *.ejs set syntax=html sw=2
+au BufNewFile,BufRead,BufEnter *.css set syntax=css sw=4
+
+" }}}
+
 " Neobundle config {{{
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
