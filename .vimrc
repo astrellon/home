@@ -18,10 +18,12 @@ set ignorecase
 set smartcase       
 set backspace=2     
 set autoindent      
+set smartindent
 set formatoptions=c,q,r,t
 set ruler      
 set laststatus=2
 set textwidth=999
+filetype indent on
 "set mouse=a
 
 syntax on
@@ -35,8 +37,9 @@ set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png
 " Filetype specific settings {{{
 
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-au BufNewFile,BufRead,BufEnter *.ejs set syntax=html sw=2
+au BufNewFile,BufRead,BufEnter *.ejs set filetype=html sw=2
 au BufNewFile,BufRead,BufEnter *.css set syntax=css sw=4
+au BufNewFile,BufRead,BufEnter *.dot set filetype=html sw=2
 
 " }}}
 
@@ -59,6 +62,10 @@ NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'jaxbot/brolink.vim'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'honza/vim-snippets'
 
 call neobundle#end()
 
@@ -386,9 +393,10 @@ endfunction
 " }}}
 
 " Super tab settings {{{
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+"let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
 " NERDTree settings {{{
