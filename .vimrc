@@ -34,15 +34,6 @@ set pastetoggle=<F2>
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg
 " }}}
 
-" Filetype specific settings {{{
-
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-au BufNewFile,BufRead,BufEnter *.ejs set filetype=html sw=2
-au BufNewFile,BufRead,BufEnter *.css set syntax=css sw=4
-au BufNewFile,BufRead,BufEnter *.dot set filetype=html sw=2
-
-" }}}
-
 " Neobundle config {{{
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -66,6 +57,7 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -393,10 +385,10 @@ endfunction
 " }}}
 
 " Super tab settings {{{
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-"let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
 " NERDTree settings {{{
@@ -470,3 +462,14 @@ com! PushSKP call s:PushToSketchup()
 " Simply Javascript Indenter config {{{
 let g:SimpleJsIndenter_BriefMode = 1
 " }}}
+
+" Filetype specific settings {{{
+
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead,BufEnter *.ejs set filetype=html sw=2
+au BufNewFile,BufRead,BufEnter *.css set syntax=css sw=4
+au BufNewFile,BufRead,BufEnter *.dot set filetype=html sw=2
+au BufNewFile,BufRead,BufEnter *.py let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+
+" }}}
+
