@@ -88,7 +88,7 @@ newcolour () {
     uuser="${green}\u"
     uhost="${blue}\h"
     pre="${reset}${bold}${colours[rand]}[ "
-    post="${bold}${colours[rand]} ] ${bold}${white}"
+    post="${bold}${colours[rand]} ] ${reset}${white}"
     folder="${bold}${white}\w"
 
     # Let me know when I'm over SSH
