@@ -57,7 +57,9 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'davidhalter/jedi-vim'
+" Why jedi so slow :(
+"NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'mhinz/vim-blockify'
 
 call neobundle#end()
 
