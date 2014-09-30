@@ -197,11 +197,20 @@ inoremap {<cr> {<cr>}<esc>O
 inoremap [<cr> [<cr>]<esc>O
 inoremap (<cr> (<cr>)<esc>O
 inoremap {% { %><cr><% } %><esc>O<tab>
+" Wrap line below inside { }'s 
+inoremap {j {<esc>j>>o}
+
+" Shortcuts for dealing with system clipboard.
+nnoremap cp "+p
+nnoremap cP "+P
+nnoremap cy "+y
 
 " Match whole line
 inoremap <c-l> <c-x><c-l>
 " Match filename
 inoremap <c-f> <c-x><c-f>
+
+
 
 " }}}
 
