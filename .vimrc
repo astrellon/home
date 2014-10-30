@@ -59,7 +59,7 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
 " Why jedi so slow :(
 "NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'mhinz/vim-blockify'
+"NeoBundle 'mhinz/vim-blockify'
 NeoBundle 'Valloric/MatchTagAlways'
 
 call neobundle#end()
