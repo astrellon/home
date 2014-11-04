@@ -139,6 +139,7 @@ alias vi='vim'
 alias c='cd ..'
 alias sapi='sudo apt-get install'
 alias sapu='sudo apt-get update'
+alias syi='sudo yum install'
 alias gca='git commit -a'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
