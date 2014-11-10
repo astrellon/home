@@ -61,6 +61,8 @@ NeoBundle 'honza/vim-snippets'
 "NeoBundle 'davidhalter/jedi-vim'
 "NeoBundle 'mhinz/vim-blockify'
 NeoBundle 'Valloric/MatchTagAlways'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'junegunn/vim-easy-align'
 
 call neobundle#end()
 
@@ -485,3 +487,8 @@ au BufNewFile,BufRead,BufEnter *.py let g:SuperTabContextDefaultCompletionType =
 
 " }}}
 
+" Easy Align {{{
+vmap <Enter> <Plug>(EasyAlign)
+
+nmap <Leader>a <Plug>(EasyAlign)
+" }}}
