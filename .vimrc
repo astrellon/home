@@ -63,6 +63,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'Valloric/YouCompleteMe'
 
 call neobundle#end()
 
