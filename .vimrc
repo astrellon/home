@@ -493,3 +493,7 @@ vmap <Enter> <Plug>(EasyAlign)
 
 nmap <Leader>a <Plug>(EasyAlign)
 " }}}
+
+" YouCompleteMe config {{{
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" }}}
