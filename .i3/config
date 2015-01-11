@@ -147,7 +147,7 @@ exec --no-startup-id nitrogen --restore
 ## Colours
 ##---------
 #colourclass               border    bckgrnd    text
-client.focused          #000000     #2d2d2d    #eeeeee #4d4d4d
+client.focused          #2d2d2d     #2d2d2d    #eeeeee #4d4d4d
 client.focused_inactive #000000     #333333    #eeeeee
 client.unfocused        #000000     #111111    #eeeeee
 client.urgent           #FF0000     #FF0000    #eeeeee

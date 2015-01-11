@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
+#
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -55,13 +55,60 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+color_prompt=yes
+
+newcolour () {
+    bold='\[\e[1m\]'
+    reset='\[\e[0m\]'
+    black='\[\e[30m\]'
+    red='\[\e[31m\]'
+    green='\[\e[32m\]'
+    yellow='\[\e[33m\]'
+    blue='\[\e[34m\]'
+    purple='\[\e[35m\]'
+    cyan='\[\e[36m\]'
+    white='\[\e[37m\]'
+
+    colours[0]=${red}
+    colours[1]=${green}
+    colours[2]=${yellow}
+    colours[3]=${blue}
+    colours[4]=${purple}
+    colours[5]=${cyan}
+    rand=`date +%s`
+    if [ `uname -o` == "Cygwin" ]
+    then
+        let "rand %= 7"
+        colours[6]=${bold}${black}
+    else
+        let "rand %= 6"
+    fi
+
+    HH=`hostname`
+    uuser="${green}\u"
+    uhost="${blue}\h"
+    pre="${reset}${bold}${colours[rand]}[ "
+    post="${bold}${colours[rand]} ] ${reset}${white}"
+    folder="${bold}${white}\w"
+
+    # Let me know when I'm over SSH
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        PS1="${pre}${uuser} ${uhost} ${folder}${post}"
+    # Otherwise I don't need to see that I'm logged in all the time.
+    else
+        PS1="${pre}${folder}${post}"
+    fi
+}
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Custom bash prompt via kirsle.net/wizards/ps1.html
+
+    newcolour
+
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset cforce_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -90,7 +137,14 @@ alias la='ls -A'
 alias l='ls -CF'
 alias vi='vim'
 alias c='cd ..'
+alias cc='cd ../..'
+alias ccc='cd ../../..'
+alias cccc='cd ../../../..'
+alias ccccc='cd ../../../../..'
 alias sapi='sudo apt-get install'
+alias sapu='sudo apt-get update'
+alias syi='sudo yum install'
+alias gca='git commit -a'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
