@@ -1,7 +1,7 @@
 CWD=`pwd`
 cd ~
 
-TO_LINK=(.bashrc .i3 .i3status.conf .vim .vimrc)
+TO_LINK=(.bashrc .bash_profile .i3 .i3status.conf .vim .vimrc)
 
 echo `pwd`
 for link in ${TO_LINK[@]}; do
