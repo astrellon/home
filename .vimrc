@@ -23,6 +23,8 @@ set formatoptions=c,q,r,t
 set ruler      
 set laststatus=2
 set textwidth=999
+set splitright
+set splitbelow
 filetype indent on
 "set mouse=a
 
