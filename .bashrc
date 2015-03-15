@@ -169,9 +169,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-source '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'

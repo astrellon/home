@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # Run programs
 bindsym $mod+t exec sakura
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#a03629'" --term="sakura"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#a03629' -sf '#eeeeee'" --term="sakura"
 bindsym $mod+f exec thunar
 bindsym $mod+c exec chromium-browser
 
