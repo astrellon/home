@@ -145,6 +145,7 @@ alias sapi='sudo apt-get install'
 alias sapu='sudo apt-get update'
 alias syi='sudo yum install'
 alias gca='git commit -a'
+alias m='make -j 4'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -168,3 +169,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'
