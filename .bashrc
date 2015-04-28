@@ -145,6 +145,8 @@ alias sapi='sudo apt-get install'
 alias sapu='sudo apt-get update'
 alias syi='sudo yum install'
 alias gca='git commit -a'
+alias gpl='git pull'
+alias gps='git push'
 alias m='make -j 4'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
