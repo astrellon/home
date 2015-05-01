@@ -10,7 +10,8 @@ set shiftwidth=4
 set expandtab       
 set smarttab        
 set showcmd         
-set number          
+"set number          
+set relativenumber
 set showmatch       
 set hlsearch        
 set incsearch       
@@ -501,3 +502,10 @@ nmap <Leader>a <Plug>(EasyAlign)
 " YouCompleteMe config {{{
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " }}}
+
+" switch.vim config {{{
+let g:switch_mapping = "-"
+" }}}
+
+autocmd ColorScheme * highlight Normal ctermbg=None
+autocmd ColorScheme * highlight NonText ctermbg=None
