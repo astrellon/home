@@ -25,6 +25,7 @@ set laststatus=2
 set textwidth=999
 set splitright
 set splitbelow
+set relativenumber
 filetype indent on
 "set mouse=a
 
@@ -66,6 +67,7 @@ NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'AndrewRadev/switch.vim'
 
 call neobundle#end()
 
