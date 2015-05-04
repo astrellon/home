@@ -26,6 +26,7 @@ set laststatus=2
 set textwidth=999
 set splitright
 set splitbelow
+set relativenumber
 filetype indent on
 "set mouse=a
 
