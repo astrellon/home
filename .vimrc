@@ -68,6 +68,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'mbbill/undotree'
 
 call neobundle#end()
 
