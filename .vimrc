@@ -10,7 +10,7 @@ set shiftwidth=4
 set expandtab       
 set smarttab        
 set showcmd         
-"set number          
+set number          
 set relativenumber
 set showmatch       
 set hlsearch        
@@ -26,7 +26,6 @@ set laststatus=2
 set textwidth=999
 set splitright
 set splitbelow
-set relativenumber
 filetype indent on
 "set mouse=a
 
@@ -462,7 +461,7 @@ let &cpo = s:save_cpo | unlet s:save_cpo
 " }}}
 
 " Emmet settings {{{
-"let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_leader_key='<leader>.'
 autocmd FileType html,css,js EmmetInstall
 " }}}
 
@@ -508,5 +507,26 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:switch_mapping = "-"
 " }}}
 
-autocmd ColorScheme * highlight Normal ctermbg=None
-autocmd ColorScheme * highlight NonText ctermbg=None
+" Undotree config {{{
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
+
+au BufReadPost * call ReadUndo()
+au BufWritePost * call WriteUndo()
+func ReadUndo()
+    if filereadable(expand('%:h'). '/.undodir/' . expand('%:t'))
+        rundo %:h/.undodir/%:t
+    endif
+endfunc
+func WriteUndo()
+    let dirname = expand('%:h') . '/.undodir'
+    if !isdirectory(dirname)
+        call mkdir(dirname)
+    endif
+    wundo %:h/.undodir/%:t
+endfunc
+
+nnoremap <F5> :UndotreeToggle<cr>
+" }}}
