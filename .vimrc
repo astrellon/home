@@ -2,7 +2,8 @@
 
 " Set values {{{
 set t_Co=256
-colorscheme jellybeans
+set background=dark
+"colorscheme jellybeans
 
 set nocompatible
 set tabstop=4  
@@ -44,7 +45,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'itchyny/lightline.vim'
+"NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'mattn/emmet-vim'
@@ -69,6 +71,7 @@ NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'mbbill/undotree'
+NeoBundle 'morhetz/gruvbox'
 
 call neobundle#end()
 
@@ -78,6 +81,8 @@ let delimitMate_expand_space=1
 filetype plugin indent on
 
 NeoBundleCheck
+
+colorscheme gruvbox
 " }}}
 
 " Save and reload buffer positions {{{
@@ -219,8 +224,8 @@ inoremap <c-l> <c-x><c-l>
 " Match filename
 inoremap <c-f> <c-x><c-f>
 
-
-
+nnoremap <leader>p :pclose<CR>
+inoremap <leader>p :pclose<CR>
 " }}}
 
 " Next and Last {{{
@@ -530,3 +535,5 @@ endfunc
 
 nnoremap <F5> :UndotreeToggle<cr>
 " }}}
+
+let g:airline_powerline_fonts = 1
