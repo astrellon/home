@@ -226,6 +226,12 @@ inoremap <c-f> <c-x><c-f>
 
 nnoremap <leader>p :pclose<CR>
 inoremap <leader>p :pclose<CR>
+
+function! CopenMake()
+    :copen | make
+endfunction
+
+nnoremap <leader>m :call CopenMake()<CR>
 " }}}
 
 " Next and Last {{{
