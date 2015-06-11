@@ -19,7 +19,8 @@ gaps inner 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:Droid Mono 9
+#font pango:Droid Mono 9
+font pango:Meslo LG M for Powerline 7
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -32,7 +33,7 @@ floating_modifier $mod
 
 # Run programs
 bindsym $mod+t exec sakura
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#a03629' -sf '#eeeeee'" --term="sakura"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#83a598' -sf '#3c3836'" --term="sakura"
 bindsym $mod+f exec thunar
 bindsym $mod+c exec chromium-browser
 
@@ -182,13 +183,13 @@ client.urgent           #FF0000     #FF0000    #eeeeee
 bar {
     status_command i3status
         colors {
-            background #000000
-            statusline #eeeeee
+            background #282828
+            statusline #fdf4c1
 
 # color_class      border  backg.  text
-            focused_workspace  #a03629 #d64937 #eeeeee
-            active_workspace   #d64937 #a03629 #222222
-            inactive_workspace #d64937 #a03629 #222222
+            focused_workspace  #83a598 #665C54 #83a598
+            active_workspace   #665C54 #504945 #222222
+            inactive_workspace #665C54 #504945 #222222
             urgent_workspace   #2f343a #aeb2c3 #ffffff
         }
 }
