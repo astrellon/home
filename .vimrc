@@ -27,6 +27,7 @@ set laststatus=2
 set textwidth=999
 set splitright
 set splitbelow
+set clipboard=unnamedplus
 filetype indent on
 "set mouse=a
 
@@ -56,7 +57,8 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
-NeoBundle 'jaxbot/brolink.vim'
+" Seems to interfer when creating a shell from vim, also don't use it.
+"NeoBundle 'jaxbot/brolink.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
