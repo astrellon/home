@@ -33,7 +33,7 @@ floating_modifier $mod
 
 # Run programs
 bindsym $mod+t exec sakura
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#83a598' -sf '#3c3836'" --term="sakura"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -sb '#b8bb26' -sf '#3c3836' -nf '#bdae93'" --term="sakura"
 bindsym $mod+f exec thunar
 bindsym $mod+c exec chromium-browser
 
@@ -168,6 +168,7 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id easystroke
+exec --no-startup-id compton -b
 
 ## Colours
 ##---------
