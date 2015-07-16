@@ -51,10 +51,10 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'paradigm/TextObjectify'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'digitaltoad/vim-jade'
+"NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'mustache/vim-mustache-handlebars'
+"NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 " Seems to interfer when creating a shell from vim, also don't use it.
@@ -62,8 +62,8 @@ NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'honza/vim-snippets'
+"NeoBundle 'garbas/vim-snipmate'
+"NeoBundle 'honza/vim-snippets'
 " Why jedi so slow :(
 "NeoBundle 'davidhalter/jedi-vim'
 "NeoBundle 'mhinz/vim-blockify'
@@ -72,8 +72,9 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'mbbill/undotree'
+"NeoBundle 'mbbill/undotree'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'PeterRincker/vim-argumentative'
 
 call neobundle#end()
 
@@ -521,26 +522,26 @@ let g:switch_mapping = "-"
 " }}}
 
 " Undotree config {{{
-if has("persistent_undo")
-    set undodir='~/.undodir/'
-    set undofile
-endif
-
-au BufReadPost * call ReadUndo()
-au BufWritePost * call WriteUndo()
-func ReadUndo()
-    if filereadable(expand('%:h'). '/.undodir/' . expand('%:t'))
-        rundo %:h/.undodir/%:t
-    endif
-endfunc
-func WriteUndo()
-    let dirname = expand('%:h') . '/.undodir'
-    if !isdirectory(dirname)
-        call mkdir(dirname)
-    endif
-    wundo %:h/.undodir/%:t
-endfunc
-
+"if has("persistent_undo")
+"    set undodir='~/.undodir/'
+"    set undofile
+"endif
+"
+"au BufReadPost * call ReadUndo()
+"au BufWritePost * call WriteUndo()
+"func ReadUndo()
+"    if filereadable(expand('%:h'). '/.undodir/' . expand('%:t'))
+"        rundo %:h/.undodir/%:t
+"    endif
+"endfunc
+"func WriteUndo()
+"    let dirname = expand('%:h') . '/.undodir'
+"    if !isdirectory(dirname)
+"        call mkdir(dirname)
+"    endif
+"    wundo %:h/.undodir/%:t
+"endfunc
+"
 nnoremap <F5> :UndotreeToggle<cr>
 " }}}
 
