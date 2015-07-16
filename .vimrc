@@ -515,6 +515,7 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 " YouCompleteMe config {{{
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_confirm_extra_conf = 0
 " }}}
 
 " switch.vim config {{{
