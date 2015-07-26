@@ -83,12 +83,25 @@ newcolour () {
     else
         let "rand %= 6"
     fi
+    
+    startBracket="["
+    endBracket="]"
+    leader=`ps -o stat= -p $$`
+    # Check if the leader string has a small s character.
+    # This means that the session is the session leader.
+    # So if it doesn't contain a small s then we are running from
+    # within another session (ie vim).
+    if ! [[ $leader =~ "s" ]]
+    then
+        startBracket="<"
+        endBracket=">"
+    fi
 
     HH=`hostname`
     uuser="${green}\u"
     uhost="${blue}\h"
-    pre="${reset}${bold}${colours[rand]}[ "
-    post="${bold}${colours[rand]} ] ${reset}${white}"
+    pre="${reset}${bold}${colours[rand]}${startBracket} "
+    post="${bold}${colours[rand]} ${endBracket} ${reset}${white}"
     folder="${bold}${white}\w"
 
     # Let me know when I'm over SSH
