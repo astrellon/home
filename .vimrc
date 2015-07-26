@@ -546,4 +546,8 @@ let g:switch_mapping = "-"
 nnoremap <F5> :UndotreeToggle<cr>
 " }}}
 
+" Airline config {{{
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_b = '%{getcwd()}'
+" }}}
