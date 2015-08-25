@@ -550,4 +550,10 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_b = '%{getcwd()}'
+
+function! AirlineInit()
+    let g:parent_folder = pathshorten(expand('%:p:h'))
+    let g:airline_section_b = airline#section#create_left(['%{parent_folder}'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 " }}}

@@ -40,6 +40,8 @@ bindsym $mod+c exec chromium-browser
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym $mod+Shift+Ctrl+c exec killall compton && compton
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -179,6 +181,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id easystroke
 exec --no-startup-id compton -b
+
+exec --no-startup-id synclient TouchpadOff=1
 
 ## Colours
 ##---------
