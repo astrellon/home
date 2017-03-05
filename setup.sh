@@ -10,3 +10,5 @@ for link in ${TO_LINK[@]}; do
         ln -s ${CWD%%/}/$link
     fi
 done
+
+apt-get install vim easystroke sakura vlc htop curl

@@ -4,6 +4,7 @@ git config --global user.email "sovereign250@gmail.com"
 git config --global user.name "astrellon"
 
 git config --global diff.tool vimdiff
+git config --global core.editor vim
 git config --global difftool.prompt false
 git config --global alias.d difftool
 
