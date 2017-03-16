@@ -75,6 +75,9 @@ NeoBundle 'AndrewRadev/switch.vim'
 "NeoBundle 'mbbill/undotree'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'PeterRincker/vim-argumentative'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'astrellon/my_ultisnippets'
 
 call neobundle#end()
 
@@ -556,4 +559,9 @@ function! AirlineInit()
     let g:airline_section_b = airline#section#create_left(['%{parent_folder}'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
+" }}}
+
+" UltiSnips config {{{
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsListSnippets="<c-l>"
 " }}}
