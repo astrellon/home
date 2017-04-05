@@ -187,3 +187,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ -d "/opt/TEE-CLC-11.0.0" ]; then
+    export PATH=$PATH:/opt/TEE-CLC-11.0.0
+fi
