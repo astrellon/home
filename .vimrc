@@ -30,6 +30,7 @@ set splitbelow
 set clipboard=unnamedplus
 filetype indent on
 "set mouse=a
+set spell spelllang=en_us
 
 syntax on
 set noshowmatch
@@ -78,6 +79,7 @@ NeoBundle 'PeterRincker/vim-argumentative'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'astrellon/my_ultisnippets'
+NeoBundle 'vim-scripts/ShaderHighLight'
 
 call neobundle#end()
 
@@ -90,6 +92,8 @@ NeoBundleCheck
 
 colorscheme gruvbox
 " }}}
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " Save and reload buffer positions {{{
 " VimTip 80: Restore cursor to file position in previous editing session
@@ -174,7 +178,7 @@ let mapleader=","
 map <C-a> <C-u>
 silent! nmap <F3> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
-silent! imap jk <Esc>
+imap jk <Esc>
 map <Space> :w<CR>
 
 map <silent> <C-a> <C-u>
@@ -202,7 +206,7 @@ nnoremap * *<c-o>
 
 " Move to start and end of lines
 noremap H ^
-noremap L g_
+noremap L $
 
 " Move to start and end of line in insert mode
 inoremap <c-a> <esc>I

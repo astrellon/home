@@ -219,7 +219,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id easystroke
 exec --no-startup-id compton -b
 
-exec --no-startup-id synclient TouchpadOff=1
+exec --no-startup-id syndaemon -i 0.1 -K -d
 
 ## Colours
 ##---------

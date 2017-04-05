@@ -1,0 +1,49 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontSize": 12,
+    
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.leader": ",",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<Space>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["L"],
+            "after": ["$"]
+        },
+        {
+            "before": ["H"],
+            "after": ["0"]
+        },
+        {
+            "before": ["S"],
+            "after": ["i", "<cr>", "<esc>", "<right>"]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Jellybeams",
+
+    "extension-manager.extensions": [
+        "vscodevim.vim",
+        "Unity.unity-debug",
+        "Tobiah.unity-tools",
+        "ms-vscode.csharp",
+        "gerane.Theme-Jellybeams"
+    ]
+}
