@@ -1,6 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontSize": 12,
+    "editor.renderWhitespace": "all",
+    "editor.lineNumbers": "relative",
+    "editor.detectIndentation": false,
+    "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
     
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -36,7 +40,6 @@
         }
     ],
     "window.zoomLevel": 0,
-    "editor.lineNumbers": "relative",
     "workbench.colorTheme": "Jellybeams",
 
     "extension-manager.extensions": [

@@ -1,32 +1,68 @@
 {
 /*
-	// Place your snippets for C# here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	"Print to console": {
-		"prefix": "log",
-		"body": [
-			"console.log('$1');",
-			"$2"
-		],
-		"description": "Log output to console"
-	}
+    // Place your snippets for C# here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    "Print to console": {
+        "prefix": "log",
+        "body": [
+            "console.log('$1');",
+            "$2"
+        ],
+        "description": "Log output to console"
+    }
 */
-	"Namespace and class": {
-		"prefix": "nameclass",
-		"body": [
-			"namespace $1",
-			"{",
-			"\tpublic class $2",
-			"\t{",
-			"\t\tpublic $2()",
-			"\t\t{",
-			"\t\t\t$3",
-			"\t\t}",
-			"\t}",
-			"}"
-		]
-	}
+    "Namespace and class": {
+        "prefix": "nameclass",
+        "body": [
+            "namespace $1",
+            "{",
+            "\tpublic class $2",
+            "\t{",
+            "\t#region Fields",
+            "\t#endregion",
+            "",
+            "\t#region Constructor",
+            "\t\tpublic $2()",
+            "\t\t{",
+            "\t\t\t$3",
+            "\t\t}",
+            "\t#endregion",
+            "",
+            "\t#region Methods",
+            "\t#endregion",
+            "\t}",
+            "}"
+        ]
+    },
+    "Namespace and Monobehaviour": {
+        "prefix": "nameunity",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "namespace $1",
+            "{",
+            "\tpublic class $2 : MonoBehaviour",
+            "\t{",
+            "\t#region Fields",
+            "\t#endregion",
+            "",
+            "\t#region Unity Methods",
+            "\t\tvoid Start()",
+            "\t\t{",
+            "\t\t}",
+            "",
+            "\t\tvoid Update()",
+            "\t\t{",
+            "\t\t}",
+            "\t#endregion",
+            "",
+            "\t#region Methods",
+            "\t#endregion",
+            "\t}",
+            "}"
+        ]
+    }
 }
