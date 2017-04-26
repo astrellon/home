@@ -9,6 +9,7 @@
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.leader": ",",
+    "vim.useCtrlKeys": true,
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "k"],
@@ -37,8 +38,18 @@
         {
             "before": ["S"],
             "after": ["i", "<cr>", "<esc>", "<right>"]
+        },
+        {
+            "before": ["<C-a>"],
+            "after": ["<C-u>"]
         }
     ],
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-x>": false,
+        "<C-v>": false
+    },
+
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Jellybeams",
 
@@ -48,5 +59,7 @@
         "Tobiah.unity-tools",
         "ms-vscode.csharp",
         "gerane.Theme-Jellybeams"
-    ]
+    ],
+
+    "csharp.fallbackDebuggerLinuxRuntimeId": "ubuntu.16.04-x64"
 }

@@ -21,18 +21,18 @@
             "{",
             "\tpublic class $2",
             "\t{",
-            "\t#region Fields",
-            "\t#endregion",
+            "\t\t#region Fields",
+            "\t\t#endregion",
             "",
-            "\t#region Constructor",
+            "\t\t#region Constructor",
             "\t\tpublic $2()",
             "\t\t{",
             "\t\t\t$3",
             "\t\t}",
-            "\t#endregion",
+            "\t\t#endregion",
             "",
-            "\t#region Methods",
-            "\t#endregion",
+            "\t\t#region Methods",
+            "\t\t#endregion",
             "\t}",
             "}"
         ]
@@ -46,10 +46,10 @@
             "{",
             "\tpublic class $2 : MonoBehaviour",
             "\t{",
-            "\t#region Fields",
-            "\t#endregion",
+            "\t\t#region Fields",
+            "\t\t#endregion",
             "",
-            "\t#region Unity Methods",
+            "\t\t#region Unity Methods",
             "\t\tvoid Start()",
             "\t\t{",
             "\t\t}",
@@ -57,12 +57,41 @@
             "\t\tvoid Update()",
             "\t\t{",
             "\t\t}",
-            "\t#endregion",
+            "\t\t#endregion",
             "",
-            "\t#region Methods",
-            "\t#endregion",
+            "\t\t#region Methods",
+            "\t\t#endregion",
             "\t}",
             "}"
+        ]
+    },
+    "Namespace and interface": {
+        "prefix": "nameface",
+        "body": [
+            "namespace $1",
+            "{",
+            "\tpublic interface $2",
+            "\t{",
+            "\t}",
+            "}"
+        ]
+    },
+    "Property getter": {
+        "prefix": "pget",
+        "body": [
+            "{ get; }"
+        ]
+    },
+    "Property getter and setter": {
+        "prefix": "pgetset",
+        "body": [
+            "{ get; set; }"
+        ]
+    },
+    "Property getter and private setter": {
+        "prefix": "pgetpset",
+        "body": [
+            "{ get; private set; }"
         ]
     }
 }
