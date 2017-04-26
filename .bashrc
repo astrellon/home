@@ -167,6 +167,7 @@ alias m='make -j 4'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias cl='sakura `pwd` & > /dev/null'
 alias ed='ed -p:'
+alias tfdiff='TF_DIFF_COMMAND="xxdiff \"%1\" \"%2\"" tf diff'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
