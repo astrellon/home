@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
 
     "editor.fontSize": 12,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "none",
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
@@ -63,6 +63,8 @@
         "gerane.Theme-Jellybeams"
     ],
 
+    "editor.renderIndentGuides": false,
+
     "csharp.fallbackDebuggerLinuxRuntimeId": "ubuntu.16.04-x64",
 
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
@@ -72,4 +74,5 @@
     "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
 
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "vim.disableAnnoyingNeovimMessage": true,
 }
