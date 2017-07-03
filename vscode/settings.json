@@ -7,6 +7,22 @@
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.meta":true
+    },
+
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/*.meta": true
+    },
     
     "vim.easymotion": true,
     "vim.incsearch": true,
