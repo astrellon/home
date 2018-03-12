@@ -192,3 +192,5 @@ fi
 if [ -d "/opt/TEE-CLC-11.0.0" ]; then
     export PATH=$PATH:/opt/TEE-CLC-11.0.0
 fi
+
+export TF_DIFF_COMMAND="diff --color=always %1 %2"

@@ -92,4 +92,5 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vim.disableAnnoyingNeovimMessage": true,
     "extensions.ignoreRecommendations": true,
+    "csharp.format.enable": false,
 }
