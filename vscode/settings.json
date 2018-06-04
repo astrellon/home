@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
 
     "editor.fontSize": 12,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
@@ -69,7 +69,7 @@
     },
 
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Jellybeams",
+    "workbench.colorTheme": "ƒ - Gruvbox",
 
     "extension-manager.extensions": [
         "vscodevim.vim",
@@ -81,8 +81,6 @@
 
     "editor.renderIndentGuides": false,
 
-    "csharp.fallbackDebuggerLinuxRuntimeId": "ubuntu.16.04-x64",
-
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
 
@@ -92,5 +90,5 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vim.disableAnnoyingNeovimMessage": true,
     "extensions.ignoreRecommendations": true,
-    "csharp.format.enable": false,
+    "cSpell.language": "en,en-GB",
 }
