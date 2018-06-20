@@ -100,17 +100,20 @@ newcolour () {
     HH=`hostname`
     uuser="${green}\u"
     uhost="${blue}\h"
-    pre="${reset}${bold}${colours[rand]}${startBracket} "
+    pre="${reset}${bold}${colours[rand]}${startBracket}"
     post="${bold}${colours[rand]} ${endBracket} ${reset}${white}"
     folder="${bold}${white}\w"
 
+    result="${pre}"
+
     # Let me know when I'm over SSH
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        PS1="${pre}${uuser} ${uhost} ${folder}${post}"
-    # Otherwise I don't need to see that I'm logged in all the time.
-    else
-        PS1="${pre}${folder}${post}"
+        result="${result} ${uuser} ${uhost}"
     fi
+
+    result="${result}\$(__git_ps1) ${folder}${post}"
+
+    PS1="${result}"
 }
 
 if [ "$color_prompt" = yes ]; then
@@ -192,3 +195,8 @@ fi
 if [ -d "/opt/TEE-CLC-11.0.0" ]; then
     export PATH=$PATH:/opt/TEE-CLC-11.0.0
 fi
+
+export TF_DIFF_COMMAND="diff --color=always %1 %2"
+
+PGADMIN_HOME='~/pgadmin4/pgadmin4'
+alias pgadmin='source $PGADMIN_HOME/bin/activate; python $PGADMIN_HOME/lib/python2.7/site-packages/pgadmin4/pgAdmin4.py'
