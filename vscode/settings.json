@@ -69,7 +69,6 @@
     },
 
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Jellybeams",
 
     "extension-manager.extensions": [
         "vscodevim.vim",
@@ -80,9 +79,6 @@
     ],
 
     "editor.renderIndentGuides": false,
-
-    "csharp.fallbackDebuggerLinuxRuntimeId": "ubuntu.16.04-x64",
-
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
 
@@ -92,4 +88,9 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
     "vim.disableAnnoyingNeovimMessage": true,
     "extensions.ignoreRecommendations": true,
+    "workbench.colorTheme": "ƒ - Gruvbox",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.showUpdateMessage": false,
+
+    "omnisharp.useMono": true
 }
