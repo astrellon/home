@@ -7,10 +7,10 @@ STATE=`xinput list-props $ID|grep 'Device Enabled'|awk '{print $4}'`
 if [ $STATE -eq 1 ]
 then
     xinput disable $ID
-    # echo "Touchpad disabled."
-    # notify-send -a 'Touchpad' 'Disabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
+    echo "Touchpad disabled."
+    notify-send -a 'Touchpad' 'Disabled touchpad' -i 0
 else
     xinput enable $ID
-    # echo "Touchpad enabled."
-    # notify-send -a 'Touchpad' 'Enabled' -i /usr/share/icons/Adwaita/48x48/devices/input-touchpad.png
+    echo "Touchpad enabled."
+    notify-send -a 'Touchpad' 'Enabled touchpad' -i 0
 fi
