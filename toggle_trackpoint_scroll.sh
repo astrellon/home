@@ -1,15 +1,18 @@
 #!/bin/bash
 
-device="TPPS/2 IBM TrackPoint"
-state=$(xinput list-props "$device" | grep "Evdev Wheel Emulation (" | grep -o "[01]$")
+device="TPPS/2 Elan TrackPoint"
+prop="libinput Scroll Method Enabled"
+state=$(xinput list-props "$device" | grep "$prop (" | grep -o "[01]$")
 
 outputState="1"
-echo "State $state"
+echo "Current state $state"
+result="No result"
 if [[ $state == "1" ]];then
   outputState="0"
-  echo "Disable mouse wheel"
+  result="Disable mouse wheel"
 else
-  echo "Enabling mouse wheel"
+  result="Enabling mouse wheel"
 fi
 
-xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" $outputState
+notify-send --urgency=low -i 0 "$result"
+xinput set-prop "$device" "$prop" 0 0 $outputState
