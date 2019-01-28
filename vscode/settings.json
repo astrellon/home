@@ -1,6 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
 
     "editor.fontSize": 12,
     "editor.renderWhitespace": "all",
@@ -34,7 +35,7 @@
             "after": ["<Esc>"]
         }
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<Space>"],
             "after": [],
@@ -68,8 +69,8 @@
         "<C-v>": false
     },
 
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "ƒ - Gruvbox",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Horizon",
 
     "extension-manager.extensions": [
         "vscodevim.vim",
@@ -91,4 +92,20 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "extensions.ignoreRecommendations": true,
     "cSpell.language": "en,en-GB",
+    "cSpell.userWords": [
+        "Deserialise",
+        "Serialiser",
+        "Serialisers"
+    ],
+    "materialTheme.fixIconsRunning": false,
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "window.titleBarStyle": "custom",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "emmet.excludeLanguages": [
+        "markdown",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact"
+    ]
 }
