@@ -139,6 +139,8 @@ bindsym $mod+Ctrl+Shift+8 move container to workspace 18
 bindsym $mod+Ctrl+Shift+9 move container to workspace 19
 bindsym $mod+Ctrl+Shift+0 move container to workspace 20
 
+bindsym $mod+Shift+Ctrl+l exec i3lock -i ~/Pictures/Wallpapers/japanroad_lock.png 000000 && systemctl suspend
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
@@ -221,6 +223,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id easystroke
 exec --no-startup-id compton -b
+exec --no-startup-id nm-applet
 
 exec --no-startup-id syndaemon -i 0.1 -K -d
 
@@ -242,9 +245,14 @@ bar {
             statusline #fdf4c1
 
 # color_class      border  backg.  text
-            focused_workspace  #b8bb26 #665C54 #b8bb26
+            focused_workspace  #b877db #66545C #bbb826
             active_workspace   #665C54 #504945 #bdae93
             inactive_workspace #665C54 #504945 #bdae93
             urgent_workspace   #2f343a #aeb2c3 #ffffff
+
+            #focused_workspace  #b8bb26 #665C54 #b8bb26
+            #active_workspace   #665C54 #504945 #bdae93
+            #inactive_workspace #665C54 #504945 #bdae93
+            #urgent_workspace   #2f343a #aeb2c3 #ffffff
         }
 }
