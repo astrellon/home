@@ -158,8 +158,9 @@ alias cc='cd ../..'
 alias ccc='cd ../../..'
 alias cccc='cd ../../../..'
 alias ccccc='cd ../../../../..'
-alias sapi='sudo apt-get install'
-alias sapu='sudo apt-get update'
+alias sapi='sudo apt install'
+alias sapu='sudo apt update'
+alias sapuu='sudo apt update && sudo apt upgrade'
 alias syi='sudo yum install'
 alias gca='git commit -a'
 alias gpl='git pull'
@@ -192,11 +193,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -d "/opt/TEE-CLC-11.0.0" ]; then
-    export PATH=$PATH:/opt/TEE-CLC-11.0.0
-fi
-
 export TF_DIFF_COMMAND="diff --color=always %1 %2"
 
 PGADMIN_HOME='~/pgadmin4/pgadmin4'
 alias pgadmin='source $PGADMIN_HOME/bin/activate; python $PGADMIN_HOME/lib/python2.7/site-packages/pgadmin4/pgAdmin4.py'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

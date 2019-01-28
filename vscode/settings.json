@@ -4,7 +4,6 @@
     "editor.wordWrap": "on",
 
     "editor.fontSize": 12,
-    "editor.renderWhitespace": "all",
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
@@ -24,7 +23,7 @@
         "**/node_modules/*/**": true,
         "**/*.meta": true
     },
-    
+
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.leader": ",",
@@ -71,6 +70,7 @@
 
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Horizon",
+    "workbench.iconTheme": "eq-material-theme-icons-ocean",
 
     "extension-manager.extensions": [
         "vscodevim.vim",
@@ -97,10 +97,11 @@
     "cSpell.userWords": [
         "Deserialise",
         "Serialiser",
-        "Serialisers"
+        "Serialisers",
+        "Blit",
+        "Lerp",
     ],
     "materialTheme.fixIconsRunning": false,
-    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "window.titleBarStyle": "custom",
     "typescript.updateImportsOnFileMove.enabled": "always",
 
@@ -109,5 +110,12 @@
         "typescript",
         "typescriptreact",
         "javascriptreact"
-    ]
+    ],
+
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "breadcrumbs.enabled": false,
+    "Tic80.executablePath": "/home/alan/tic80/tic80",
+    "Tic80.executablePathCard": "/home/alan/.local/share/com.nesbox.tic/TIC-80/test1",
+    "vim.disableExtension": false,
 }
