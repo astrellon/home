@@ -68,7 +68,6 @@
         "<C-v>": false
     },
 
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Horizon",
     "workbench.iconTheme": "eq-material-theme-icons-ocean",
 
