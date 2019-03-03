@@ -69,7 +69,7 @@
     },
 
     "workbench.colorTheme": "Horizon",
-    "workbench.iconTheme": "eq-material-theme-icons-ocean",
+    "workbench.iconTheme": "material-icon-theme",
 
     "extension-manager.extensions": [
         "vscodevim.vim",
@@ -117,4 +117,5 @@
     "Tic80.executablePath": "/home/alan/tic80/tic80",
     "Tic80.executablePathCard": "/home/alan/.local/share/com.nesbox.tic/TIC-80/test1",
     "vim.disableExtension": false,
+    "window.zoomLevel": 0,
 }
