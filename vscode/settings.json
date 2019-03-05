@@ -93,12 +93,12 @@
     "extensions.ignoreRecommendations": true,
     "cSpell.language": "en,en-GB",
     "cSpell.userWords": [
+        "Cbor",
         "Deserialise",
         "Serialiser",
         "Serialisers"
     ],
     "materialTheme.fixIconsRunning": false,
-    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "window.titleBarStyle": "custom",
     "typescript.updateImportsOnFileMove.enabled": "always",
 
@@ -107,5 +107,6 @@
         "typescript",
         "typescriptreact",
         "javascriptreact"
-    ]
+    ],
+    "workbench.iconTheme": "material-icon-theme"
 }
