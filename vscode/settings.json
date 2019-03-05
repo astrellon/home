@@ -4,7 +4,6 @@
     "editor.wordWrap": "on",
 
     "editor.fontSize": 12,
-    "editor.renderWhitespace": "all",
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
@@ -24,7 +23,7 @@
         "**/node_modules/*/**": true,
         "**/*.meta": true
     },
-    
+
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.leader": ",",
@@ -69,19 +68,10 @@
         "<C-v>": false
     },
 
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Horizon",
-
-    "extension-manager.extensions": [
-        "vscodevim.vim",
-        "Unity.unity-debug",
-        "Tobiah.unity-tools",
-        "ms-vscode.csharp",
-        "gerane.Theme-Jellybeams"
-    ],
+    "workbench.iconTheme": "material-icon-theme",
 
     "editor.renderIndentGuides": false,
-
     "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
 
@@ -89,16 +79,18 @@
     "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
 
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
-    "vim.disableAnnoyingNeovimMessage": true,
     "extensions.ignoreRecommendations": true,
+    "material-icon-theme.showUpdateMessage": false,
+
     "cSpell.language": "en,en-GB",
     "cSpell.userWords": [
         "Cbor",
         "Deserialise",
         "Serialiser",
-        "Serialisers"
+        "Serialisers",
+        "Blit",
+        "Lerp",
     ],
-    "materialTheme.fixIconsRunning": false,
     "window.titleBarStyle": "custom",
     "typescript.updateImportsOnFileMove.enabled": "always",
 
@@ -108,5 +100,7 @@
         "typescriptreact",
         "javascriptreact"
     ],
-    "workbench.iconTheme": "material-icon-theme"
+    "files.trimTrailingWhitespace": true,
+    "breadcrumbs.enabled": false,
+    "vim.disableExtension": false,
 }

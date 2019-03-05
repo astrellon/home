@@ -83,7 +83,7 @@ newcolour () {
     else
         let "rand %= 6"
     fi
-    
+
     startBracket="["
     endBracket="]"
     leader=`ps -o stat= -p $$`
@@ -171,7 +171,6 @@ alias m='make -j 4'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias cl='sakura `pwd` & > /dev/null'
 alias ed='ed -p:'
-alias tfdiff='TF_DIFF_COMMAND="xxdiff \"%1\" \"%2\"" tf diff'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -193,11 +192,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -d "/opt/TEE-CLC-11.0.0" ]; then
-    export PATH=$PATH:/opt/TEE-CLC-11.0.0
-fi
-
-export TF_DIFF_COMMAND="diff --color=always %1 %2"
-
-PGADMIN_HOME='~/pgadmin4/pgadmin4'
-alias pgadmin='source $PGADMIN_HOME/bin/activate; python $PGADMIN_HOME/lib/python2.7/site-packages/pgadmin4/pgAdmin4.py'
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
