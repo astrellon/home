@@ -72,11 +72,6 @@
     "workbench.iconTheme": "material-icon-theme",
 
     "editor.renderIndentGuides": false,
-    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-
-    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
 
     "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
     "extensions.ignoreRecommendations": true,
@@ -103,4 +98,19 @@
     "files.trimTrailingWhitespace": true,
     "breadcrumbs.enabled": false,
     "vim.disableExtension": false,
+    "window.zoomLevel": 1,
+    "gitlens.codeLens.enabled": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.renderWhitespace": "all",
 }
