@@ -84,12 +84,20 @@
 
     "cSpell.language": "en,en-GB",
     "cSpell.userWords": [
+        "Blit",
         "Cbor",
         "Deserialise",
+        "Immer",
+        "Lawrey",
+        "Lerp",
         "Serialiser",
         "Serialisers",
-        "Blit",
-        "Lerp",
+        "astrellon",
+        "migenius",
+        "substr",
+        "typeof",
+        "vdom",
+        "voxel"
     ],
     "window.titleBarStyle": "custom",
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -103,4 +111,5 @@
     "files.trimTrailingWhitespace": true,
     "breadcrumbs.enabled": false,
     "vim.disableExtension": false,
+    "window.zoomLevel": 1,
 }
