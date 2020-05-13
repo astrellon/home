@@ -121,4 +121,11 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.renderWhitespace": "all",
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "html.mirrorCursorOnMatchingTag": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
