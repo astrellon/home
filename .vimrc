@@ -81,6 +81,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'astrellon/my_ultisnippets'
 NeoBundle 'vim-scripts/ShaderHighLight'
 NeoBundle 'leafgarland/typescript-vim'
+"NeoBundle 'neoclide/coc.nvim'
 
 call neobundle#end()
 

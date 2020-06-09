@@ -65,11 +65,12 @@
     "vim.handleKeys": {
         "<C-c>": false,
         "<C-x>": false,
-        "<C-v>": false
+        "<C-v>": false,
+        "<C-y>": false
     },
 
     "workbench.colorTheme": "Horizon",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vs-nomo-dark",
 
     "editor.renderIndentGuides": false,
 
@@ -128,4 +129,8 @@
     "html.mirrorCursorOnMatchingTag": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "git.terminalAuthentication": false,
+    "vim.commandLineModeKeyBindings": [
+
+    ],
 }

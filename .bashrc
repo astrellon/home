@@ -193,3 +193,6 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Created by `userpath` on 2019-08-22 23:00:33
+export PATH="$PATH:/home/alan/.local/bin"
