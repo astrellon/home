@@ -1,12 +1,12 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "editor.wordWrap": "on",
 
     "editor.fontSize": 12,
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
-    "terminal.integrated.fontFamily": "'Liberation Mono for Powerline', 'Droid Sans Mono', 'monospace'",
+    "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 
     "files.exclude": {
         "**/.git": true,
@@ -70,7 +70,7 @@
     },
 
     "workbench.colorTheme": "Horizon",
-    "workbench.iconTheme": "vs-nomo-dark",
+    "workbench.iconTheme": "material-icon-theme",
 
     "editor.renderIndentGuides": false,
 
@@ -133,4 +133,5 @@
     "vim.commandLineModeKeyBindings": [
 
     ],
+    "C_Cpp.workspaceSymbols": "All",
 }

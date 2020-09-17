@@ -246,5 +246,27 @@
             "\t}",
             "}"
         ]
-    }
+    },
+    "Test Class": {
+        "prefix": "testclass",
+        "body": [
+            "using System;",
+            "using NUnit.Framework;",
+            "",
+            "namespace $1.Tests",
+            "{",
+            "\t[TestFixture]",
+            "\tpublic class $TM_FILENAME_BASE",
+            "\t{",
+            "\t\t#region Methods",
+            "\t\t[Test]",
+            "\t\tpublic void $2()",
+            "\t\t{",
+            "\t\t\t$3",
+            "\t\t}",
+            "\t\t#endregion",
+            "\t}",
+            "}"
+        ]
+    },
 }
