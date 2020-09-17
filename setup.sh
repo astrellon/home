@@ -18,3 +18,5 @@ ln -s ${CWD%%/}/vscode/settings.json ~/.config/Code/User/settings.json
 ln -s ${CWD%%/}/vscode/snippets ~/.config/Code/User/snippets
 
 apt-get install vim easystroke sakura vlc htop curl xdotool
+
+ln -s ~/.local/bin/focus_send_key ./pathscripts/focus_send_key 
