@@ -128,4 +128,7 @@
     "html.mirrorCursorOnMatchingTag": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "git.githubAuthentication": false,
+    "git.terminalAuthentication": false,
+    "C_Cpp.default.cppStandard": "c++17"
 }
