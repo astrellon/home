@@ -1,0 +1,2 @@
+#!/bin/sh
+xdotool windowfocus `xdotool getmouselocation --shell | grep WINDOW= | cut -d= -f2-` && xdotool key $1
