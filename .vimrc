@@ -3,7 +3,6 @@
 " Set values {{{
 set t_Co=256
 set background=dark
-"colorscheme jellybeans
 
 set nocompatible
 set tabstop=4  
@@ -45,6 +44,22 @@ set pastetoggle=<F2>
 " Ignore these for any vim file auto complete.
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg,*.d,*.o
 set wildmode=list:longest
+" }}}
+
+let g:OmniSharp_server_use_net6 = 1
+
+" Vimspector config {{{
+let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
+nmap <F5> <Plug>VimspectorContinue
+nmap <F9> <Plug>VimspectorToggleBreakpoint
+nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+nmap <F10> <Plug>VimspectorStepOver
+nmap <F11> <Plug>VimspectorStepInto
+nmap <F12> <Plug>VimspectorStepOut
+nmap <leader><F11> <Plug>VimspectorUpFrame
+nmap <leader><F12> <Plug>VimspectorDownFrame
+nmap <leader>B     <Plug>VimspectorBreakpoints
+nmap <leader>D     <Plug>VimspectorDisassemble
 " }}}
 
 " Neobundle config {{{
@@ -536,10 +551,6 @@ nmap <Leader>a <Plug>(EasyAlign)
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf = 0
 " }}}
-
-let g:OmniSharp_server_use_net6 = 1
-let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
-let g:vimspector_enable_mappings = 'HUMAN'
 
 " switch.vim config {{{
 let g:switch_mapping = "-"
