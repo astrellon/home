@@ -538,7 +538,8 @@ let g:ycm_confirm_extra_conf = 0
 " }}}
 
 let g:OmniSharp_server_use_net6 = 1
-let g:vimspector_base_dir='~/.vim/bundle/vimspector'
+let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " switch.vim config {{{
 let g:switch_mapping = "-"
