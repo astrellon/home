@@ -27,17 +27,24 @@ set laststatus=2
 set textwidth=999
 set splitright
 set splitbelow
-set clipboard=unnamedplus
+set exrc
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 filetype indent on
 "set mouse=a
 set spell spelllang=en_us
 
 syntax on
 set noshowmatch
+autocmd BufNewFile,BufRead *.lys set syntax=lisp
 
 set pastetoggle=<F2>
 " Ignore these for any vim file auto complete.
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg,*.d,*.o
+set wildmode=list:longest
 " }}}
 
 " Neobundle config {{{
@@ -68,19 +75,22 @@ NeoBundle 'MarcWeber/vim-addon-mw-utils'
 " Why jedi so slow :(
 "NeoBundle 'davidhalter/jedi-vim'
 "NeoBundle 'mhinz/vim-blockify'
-NeoBundle 'Valloric/MatchTagAlways'
+"NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'AndrewRadev/switch.vim'
 "NeoBundle 'mbbill/undotree'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'PeterRincker/vim-argumentative'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'astrellon/my_ultisnippets'
+"NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'honza/vim-snippets'
+"NeoBundle 'astrellon/my_ultisnippets'
 NeoBundle 'vim-scripts/ShaderHighLight'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'prabirshrestha/asyncomplete.vim'
+NeoBundle 'OmniSharp/omnisharp-vim'
+NeoBundle 'puremourning/vimspector'
 "NeoBundle 'neoclide/coc.nvim'
 
 call neobundle#end()
@@ -526,6 +536,9 @@ nmap <Leader>a <Plug>(EasyAlign)
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf = 0
 " }}}
+
+let g:OmniSharp_server_use_net6 = 1
+let g:vimspector_base_dir='~/.vim/bundle/vimspector'
 
 " switch.vim config {{{
 let g:switch_mapping = "-"
