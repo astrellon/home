@@ -33,7 +33,7 @@ else
   set clipboard=unnamedplus "Linux
 endif
 filetype indent on
-"set mouse=a
+set mouse=n
 set spell spelllang=en_us
 
 syntax on
@@ -44,22 +44,6 @@ set pastetoggle=<F2>
 " Ignore these for any vim file auto complete.
 set wildignore+=*/tmp/*,*/temp/*,*.so,*.swp,*.zip,*.meta,*.swo,*.exe,*.bak,*.png,*.jpg,*.d,*.o
 set wildmode=list:longest
-" }}}
-
-let g:OmniSharp_server_use_net6 = 1
-
-" Vimspector config {{{
-let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
-nmap <F5> <Plug>VimspectorContinue
-nmap <F9> <Plug>VimspectorToggleBreakpoint
-nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
-nmap <F10> <Plug>VimspectorStepOver
-nmap <F11> <Plug>VimspectorStepInto
-nmap <F12> <Plug>VimspectorStepOut
-nmap <leader><F11> <Plug>VimspectorUpFrame
-nmap <leader><F12> <Plug>VimspectorDownFrame
-nmap <leader>B     <Plug>VimspectorBreakpoints
-nmap <leader>D     <Plug>VimspectorDisassemble
 " }}}
 
 " Neobundle config {{{
@@ -103,10 +87,10 @@ NeoBundle 'PeterRincker/vim-argumentative'
 "NeoBundle 'astrellon/my_ultisnippets'
 NeoBundle 'vim-scripts/ShaderHighLight'
 NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'prabirshrestha/asyncomplete.vim'
-NeoBundle 'OmniSharp/omnisharp-vim'
+"NeoBundle 'prabirshrestha/asyncomplete.vim'
+"NeoBundle 'OmniSharp/omnisharp-vim'
 NeoBundle 'puremourning/vimspector'
-"NeoBundle 'neoclide/coc.nvim'
+NeoBundle 'neoclide/coc.nvim'
 
 call neobundle#end()
 
@@ -595,4 +579,41 @@ autocmd User AirlineAfterInit call AirlineInit()
 " UltiSnips config {{{
 let g:UltiSnipsExpandTrigger="<c-h>"
 let g:UltiSnipsListSnippets="<c-l>"
+" }}}
+
+let g:OmniSharp_server_use_net6 = 1
+
+" Vimspector config {{{
+let g:vimspector_base_dir=expand( '$HOME/.vim/vimspector-config' )
+nmap <F5> <Plug>VimspectorContinue
+nmap <F9> <Plug>VimspectorToggleBreakpoint
+nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+nmap <F10> <Plug>VimspectorStepOver
+nmap <F11> <Plug>VimspectorStepInto
+nmap <F12> <Plug>VimspectorStepOut
+nmap <leader><F11> <Plug>VimspectorUpFrame
+nmap <leader><F12> <Plug>VimspectorDownFrame
+nmap <leader>B     <Plug>VimspectorBreakpoints
+nmap <leader>D     <Plug>VimspectorDisassemble
+" }}}
+
+" Coc config {{{
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+"" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+"This expression seems to be responsible for coc formatting on enter
+inoremap <silent><expr> <cr> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"I this just says autocomplete with the first option if pop up menu is open.
+"If it is not open, just do a regular tab.
+inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<tab>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 " }}}
