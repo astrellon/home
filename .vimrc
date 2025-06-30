@@ -187,7 +187,7 @@ set foldexpr=NeatFoldExpr()
 " Remapping {{{
 let mapleader=","
 map <C-a> <C-u>
-silent! nmap <F3> :NERDTreeToggle<CR>
+silent! nmap <F2> :NERDTreeToggle<CR>
 silent! map <F4> :NERDTreeFind<CR>
 imap jk <Esc>
 map <Space> :w<CR>
@@ -613,7 +613,7 @@ inoremap <silent><expr> <cr> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 "I this just says autocomplete with the first option if pop up menu is open.
 "If it is not open, just do a regular tab.
 inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<tab>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 " }}}
