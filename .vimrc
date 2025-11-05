@@ -91,6 +91,7 @@ NeoBundle 'leafgarland/typescript-vim'
 "NeoBundle 'OmniSharp/omnisharp-vim'
 NeoBundle 'puremourning/vimspector'
 NeoBundle 'neoclide/coc.nvim'
+NeoBundle 'habamax/vim-godot'
 
 call neobundle#end()
 
@@ -193,6 +194,8 @@ imap jk <Esc>
 map <Space> :w<CR>
 
 map <silent> <C-a> <C-u>
+
+map <silent> <C-/> <Plug>NERDCommenterToggle
 
 " navigation for ctrlp
 imap <silent> <C-h> <left>
@@ -451,7 +454,7 @@ let NERDTreeIgnore = ['\.pyc$','\.d$','\.o$']
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn))|(temp|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak|png|jpg|d|o)$',
+  \ 'file': '\v\.(exe|so|dll|meta|swp|swo|bak|png|jpg|d|o|uid|import)$',
   \ }
 " }}}
 
@@ -607,6 +610,10 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
 xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 "This expression seems to be responsible for coc formatting on enter
 inoremap <silent><expr> <cr> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
